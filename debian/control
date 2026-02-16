@@ -1,0 +1,19 @@
+Source: yt-dld
+Section: video
+Priority: optional
+Maintainer: YT-DLD Developer <developer@example.com>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.6.2
+
+Package: yt-dld
+Architecture: amd64
+Depends: ${misc:Depends}, ffmpeg
+Description: GUI for yt-dlp - YouTube video downloader
+ A powerful graphical user interface for yt-dlp, allowing you to download
+ videos from YouTube and many other video platforms.
+ .
+ Features include:
+  - Easy-to-use graphical interface
+  - Support for multiple video formats
+  - Batch downloading
+  - Download queue management

@@ -1,0 +1,7 @@
+#!/bin/bash
+# Wrapper script for yt-dld-gui
+# This script allows the GUI to find its internal files
+
+SCRIPT_DIR="/usr/share/yt-dld"
+export PATH="$SCRIPT_DIR/_internal:$PATH"
+exec "$SCRIPT_DIR/yt_dlp_gui" "$@"

@@ -1,0 +1,7 @@
+yt-dld (1.0.0) stable; urgency=low
+
+  * Initial release
+  * GUI for yt-dlp video downloader
+  * Includes bundled Python runtime and ffmpeg tools
+
+ -- YT-DLD Developer <developer@example.com>  Sun, 16 Feb 2026 20:00:00 +0600

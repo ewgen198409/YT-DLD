@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	# Create directories for installation
+	mkdir -p debian/yt-dld/usr/bin
+	mkdir -p debian/yt-dld/usr/share/yt-dld
+	mkdir -p debian/yt-dld/usr/share/applications
+	mkdir -p debian/yt-dld/usr/share/pixmaps
+	
+	# Install main executable
+	install -m 755 yt-dlp debian/yt-dld/usr/bin/yt-dlp
+	install -m 755 yt_dlp_gui debian/yt-dld/usr/bin/yt-dld-gui
+	
+	# Install internal files and ffmpeg tools
+	cp -r _internal debian/yt-dld/usr/share/yt-dld/
+	cp -r ffmpeg_tools debian/yt-dld/usr/share/yt-dld/
+	
+	# Install desktop file
+	install -m 644 debian/yt-dld.desktop debian/yt-dld/usr/share/applications/
+	
+	# Install icon (we'll use a simple approach - copy yt-dlp icon if exists or create placeholder)
+	install -m 644 debian/yt-dld.png debian/yt-dld/usr/share/pixmaps/yt-dld.png || true
